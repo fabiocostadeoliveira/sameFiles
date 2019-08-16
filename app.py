@@ -1,41 +1,45 @@
-import hashlib, os
-from os import listdir
-from os.path import isfile,join
+import configparser as cfgparse
+
+import os
+import utils.readproperties as rp
+import entities.clientconfig
+from utils.oscommands import getMd5
+from utils.oscommands import get_files_by_directory
+
+from utils.oscommands import put_os_separator_in_path
+from entities.clientconfig import ClientConfiguration
+from types import SimpleNamespace
 
 
-def getMd5(fileName, dirName=None):
-    fileAbsoluteAux = ''
-    if dirName is None:
-        fileAbsoluteAux = fileName
-    else:
-        fileAbsoluteAux = dirName + os.sep + fileName
-        print(fileAbsoluteAux)
-    try:
-        hasher = hashlib.md5()
-        with open(fileAbsoluteAux, 'rb') as afile:
-            buf = afile.read()
-            hasher.update(buf)
-        return hasher.hexdigest()
-    except IOError:
-        print('Erro ao tentar ler o arquivo: ', fileAbsoluteAux)
-        return None
-    return None
+def create_dict_cfg(cfgdirectory: str, cfgfiles: list):
+    all_config = dict()
+    for filecfg in cfgfiles:
+        cfg = rp.read_properties_without_section(cfgdirectory + os.sep + filecfg)
+        odict = cfg.defaults()
+        db_name = odict.get('nomebase')
+        all_config[db_name] = dict(odict.items())
+    return all_config
 
 
-def getFilesByDirecory(dir):
-    files = [f for f in listdir(dir) if isfile(join(dir, f))]
-    return files
+def new_clientconfig_by_dict_properties(client_cfg: dict):
+    cli = ClientConfiguration()
+    cli.client_name = client_cfg.get()
 
-def putOsSeparatorInPath(dir):
-    if dir[len(dir) - 1:] != os.sep:
-        dir + os.sep
-    return dir
 
-print(getMd5('c:\\choose.i'))
-print(getMd5('choose.i', dirName='c:'))
+if __name__ == '__main__':
+    directory = 'properties'
+    cfgFiles = get_files_by_directory(directory)
+    database_cfgs = create_dict_cfg(directory, cfgFiles)
+    print(database_cfgs)
 
-files = getFilesByDirecory('c:\\')
+    # a = SimpleNamespace(**database_cfgs)
+    # print(type(database_cfgs['agriter']['porta']))
+    # b = SimpleNamespace(**a.agriter)
+    # print(b.porta)
+    #
+    # porta = a.agriter.get('portaa', None) or 1
+    # print(porta)
 
-print(files)
 
-print(putOsSeparatorInPath("c:"))
+
+
