@@ -3,7 +3,7 @@ import configparser as cfgparse
 import os
 import utils.readproperties as rp
 import entities.clientconfig
-from utils.oscommands import getMd5
+from utils.oscommands import get_md5_file
 from utils.oscommands import get_files_by_directory
 
 from utils.oscommands import put_os_separator_in_path

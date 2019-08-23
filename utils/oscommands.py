@@ -4,7 +4,7 @@ from os.path import isfile, join
 from utils.fileutil import extract_filename_from_fullname
 
 
-def getMd5(fileName, dirName=None):
+def get_md5_file(fileName, dirName=None):
     fileAbsoluteAux = ''
     if dirName is None:
         fileAbsoluteAux = fileName
@@ -20,6 +20,21 @@ def getMd5(fileName, dirName=None):
     except IOError:
         print('Erro ao tentar ler o arquivo: ', fileAbsoluteAux)
         return None
+    return None
+
+
+def get_md5_string(text: str):
+    try:
+        if text is '':
+            raise  ValueError('Nao é possivel gerar md5 de uma string vazia!!!')
+        hasher = hashlib.md5()
+        buf = text.encode()
+        hasher.update(buf)
+        return hasher.hexdigest()
+
+    except ValueError as verror:
+        print(verror)
+
     return None
 
 
@@ -80,13 +95,16 @@ def rule_list_file(full_file_name: str, contains):
     return f_contains
 
 
-def get_files_by_directory(directory, contains=None, contains_insensitive=None, only_files=True, recusive=False):
-    files = [f for f in listdir(directory) if rule_list_file(join(directory, f), contains)]
-    # if contains is not None:
-    #     if contains_insensitive is True:
-    #         files = filter_contains_insensitive(contains, files)
-    #     else:
-    #         files = filter_contains(contains, files)
+def get_files_by_directory(directory, contains='*', contains_insensitive=None, only_files=True, recusive=False):
+    files = list()
+    if contains is not None and type(contains) == list:
+        for f in contains:
+            if isfile(join(directory, f)):
+                files.append(f)
+            else:
+                print('Warning: Fonte {0} nao existe no diretorio {1}'.format(f, directory))
+    else:
+        files = [f for f in listdir(directory) if rule_list_file(join(directory, f), contains)]
     return files
 
 

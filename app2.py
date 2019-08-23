@@ -1,11 +1,30 @@
-import properties.cfggeral as cfg
-import getopt, sys
+import getopt
+import sys
+import os
+import json
+import settings
 from shutil import copy2 as os_copy
-from utils.oscommands import getMd5, getMd5_2
+from utils.oscommands import get_md5_file, get_md5_string
 from utils.oscommands import get_files_by_directory
-import hashlib, os
 from os.path import isfile, join
 from datetime import datetime
+
+
+def read_db_config_json():
+    try:
+        with open(settings.DIRECTORY_CONFIG + os.sep + 'database_config.json', 'r') as f:
+            json_config = json.load(f)
+        if json_config is not None:
+            json_config_dict = dict(json_config)
+    except FileNotFoundError as ferror:
+        print('Arquivo de configuracao nao encontrado! \n Pilha: {0}'.format(ferror))
+    except json.decoder.JSONDecodeError as jsonError:
+        print('Erro ao tentar converter json')
+    finally:
+        if 'json_config_dict' not in locals():
+            sys.exit(1)
+
+    return json_config_dict
 
 
 def hash_bytestr_iter(bytesiter, hasher, ashexstr=False):
@@ -32,71 +51,125 @@ def print_custom(msg):
     print(get_data_hora_texto(), ' - ', msg)
 
 
+def get_directory_temp_name(txt: str):
+    return get_md5_string(txt)
+
+
+def create_dir_tmp(text: str):
+    md5_name = get_md5_string(text)
+    dir_name = settings.DIRECTORY_TEMP_APP + os.sep + md5_name
+
+    try:
+        if not os.path.exists(dir_name):
+            os.makedirs(dir_name)
+    except PermissionError as perror:
+        print('Diretorio sem permissao para criar diretorio')
+        print(perror)
+        return False
+    except Exception as e:
+        print('Erro ao criar diretorio: ' + text)
+        print(e)
+        return False
+    return dir_name
+
+
 def cli(argv):
     try:
-        opts, args = getopt.getopt(argv, "hvda:b:c:", ["dbmain=", "dbcliente=", "--files=", "cp"])
+        opts, args = getopt.getopt(argv, "hvda:b:c:d", ["dbmain=", "dbcliente=", "tagmain=", "dir="])
     except getopt.GetoptError:
-        print('exec.py --dbmain=nome_dump1 --dbcliente=nome_dump2')
+        print('exec.py --dbmain=nome_dump1 --dbcliente=nome_dump2 ')
         sys.exit(2)
     opcoes = dict()
 
     for opt, arg in opts:
         if opt == '-h':
-            print('--dbmain [opcional, default main]', '--dbcliente', '--cp[efetua a copia]')
+            print('--dbmain [opcional, default main]', '--dbcliente', '--dir[efetua a copia para esse diretorio]')
             sys.exit()
         elif opt == '-v':
-            sys.exit()
+            opcoes['v'] = True
         elif opt in ("-a", "--dbmain"):
             opcoes['dbmain'] = arg
         elif opt in ("-b", "--dbcliente"):
             opcoes['dbcliente'] = arg
-        elif opt in ("-c", "--cp"):
-            opcoes['cp'] = True
+        elif opt in ("-c", "--tagmain"):
+            opcoes['tagmain'] = arg
+        elif opt in ("-d", "--dir"):
+            opcoes['dir'] = arg
 
     if opcoes.get('dbmain', None) is None:
         opcoes['dbmain'] = 'main'
 
-    if opcoes.get('cp', None) is None:
-        opcoes['cp'] = False
+    if opcoes.get('v', None) is None:
+        opcoes['v'] = False
 
-    if opcoes.get('dbcliente',None) is None:
-        print("Parametros Invalidos!!!")
-        print("Devem ser informados pelo menos o parametro --dbcliente para a comparacao")
+    if opcoes.get('cache', None) is None:
+        opcoes['cache'] = False
+
+    if opcoes.get('dbcliente', None) is None:
+        print("O parametro --dbcliente nao foi informado.")
         exit(1)
+
+    if opcoes.get('tagmain', None) is None:
+        print("O parametro --tagmain nao foi informado.")
+        exit(1)
+
     return opcoes
+
+
+def load_tag_version(p_tag_name):
+    try:
+        with open(p_tag_name, 'r') as file:
+            dict_sources = json.load(file)
+    except FileNotFoundError as ferror:
+        print(f'Arquivo nao encontrado: {p_tag_name}')
+        return None
+    except Exception as error:
+        print(f'Erro ao ler arquivo de tag: {p_tag_name}')
+        return None
+    return dict_sources
 
 
 if __name__ == '__main__':
     opcoes = cli(sys.argv[1:])
 
-    print('opcoes', opcoes)
-    fazer_copia_fontes = opcoes['cp']
-    db_main = opcoes['dbmain']
-    db_cliente = opcoes['dbcliente']
+    cfg = read_db_config_json().get(settings.ENVIRONMENT_DATABASE_CONFIG, None)
 
-    # fontes = ['nfe*', 'bib*', 'epc*', 'efd*', 'epj*']
-    fontes = ['nfe002wr.trg', 'ecd501.p','usu201d.p','cadp708.p']
+    if cfg is None:
+        print('Nao foi possivel carregar o ambiente configurado')
+        print(f'Ambiente: {settings.ENVIRONMENT_DATABASE_CONFIG}')
+        sys.exit(1)
 
-    if cfg.clientes.get(db_main, None) is None:
+    db_main = opcoes.get('dbmain')
+    db_cliente = opcoes.get('dbcliente')
+    verbose = opcoes.get('v')
+    fazer_copia_fontes = False
+
+    if opcoes.get('dir', None) is not None:
+        diretorio_destino_copia = opcoes['dir']
+        fazer_copia_fontes = True
+
+    fontes = ['nfe002wr.trg', 'ecd501.p', 'usu201d.p', 'cadp708.p', 'aaaaaaa', 'bbbbbb']
+    #fontes = '*'
+
+    if cfg.get(db_main, None) is None:
         print('Configuracao para base main "{0}" nao encontrada'.format(db_main))
         sys.exit(1)
 
-    if cfg.clientes.get(db_cliente, None) is None:
+    if cfg.get(db_cliente, None) is None:
         print('Configuracao para base cliente "{0}" nao encontrada'.format(db_cliente))
         sys.exit(1)
 
-    dir_main = cfg.clientes[db_main]['propath'][0]
-    diretorios_cliente = cfg.clientes[db_cliente]['propath']
+    diretorios_main = cfg[db_main]['source_paths'][0]
+    diretorios_cliente = cfg[db_cliente]['source_paths']
 
-    diretorio_destino_copia = 'C:\\testeMd5\\cliente1\\cooperate\\atu'
+    print_custom('Carregando lista de fontes do banco {0} ....'.format(db_main))
+    fontes_main = get_files_by_directory(diretorios_main, contains=fontes)
 
-    print_custom('Carregando lista de fontes...')
-    fontes_main = get_files_by_directory(dir_main, contains=fontes)
-
-    print_custom('Obtendo Md5 arquivos do main...')
+    print_custom('Obtendo Md5 arquivos do banco {0}...'.format(db_main))
     fontes_main_com_md5 = dict()
+
     for f in fontes_main:
-        fontes_main_com_md5[f] = {'md5': getMd5(f, dir_main)}
+        fontes_main_com_md5[f] = {'md5': get_md5_file(f, diretorios_main)}
 
     print_custom('Fim processo Md5 do main.')
 
@@ -112,7 +185,7 @@ if __name__ == '__main__':
             nome_completo = join(dir_cliente, fonte)
 
             if isfile(nome_completo):
-                md5_cliente = getMd5(nome_completo)
+                md5_cliente = get_md5_file(nome_completo)
                 teste_dict[fonte] = {'md5': md5_cliente}
                 obj = {fonte: {'md5': md5_cliente}}
                 break
@@ -131,8 +204,6 @@ if __name__ == '__main__':
         md5_cli = teste_dict[key]['md5']
         md5_main = fontes_main_com_md5[key]['md5']
 
-        # colocar for dos diretorios
-        #print('fonte', key, 'md5 cli:', md5_cli, 'md5 main: ', md5_main)
         if md5_cli is '':
             fontes_status[key] = {'status': 'novo'}
         elif md5_cli != md5_main:
@@ -142,20 +213,23 @@ if __name__ == '__main__':
         else:
             fontes_status[key] = {'status': 'indefinido'}
 
-    print('destino', diretorio_destino_copia)
     for idx, obj in fontes_status.items():
-        if obj['status'] is not 'igual':
-            arquivo = join(dir_main, idx)
-            print(arquivo, ' para =>', diretorio_destino_copia)
-            try:
-                os_copy(arquivo, diretorio_destino_copia)
-            except PermissionError as perror:
-                print(perror)
-                print('Sem permissao para copiar os arquivos!!!')
-                exit(1)
-            except FileNotFoundError as ferror:
-                print(ferror)
-                print('Arquivo de origem nao encontrado:', arquivo)
-                exit(1)
 
-    print('Copia concluida')
+        arquivo = join(diretorios_main, idx)
+        if fazer_copia_fontes is False:
+            print(arquivo, '.'*20, obj['status'])
+        else:
+            if obj['status'] is not 'igual':
+                print(arquivo, ' para =>', diretorio_destino_copia)
+                try:
+                    os_copy(arquivo, diretorio_destino_copia)
+                except PermissionError as perror:
+                    print(perror)
+                    print('Sem permissao para copiar os arquivos!!!')
+                    exit(1)
+                except FileNotFoundError as ferror:
+                    print(ferror)
+                    print('Arquivo de origem nao encontrado:', arquivo)
+                    exit(1)
+
+    print('Finalizado com Sucesso!!')

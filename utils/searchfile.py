@@ -1,5 +1,5 @@
 import os
-from utils.oscommands import getMd5 as Md5
+from utils.oscommands import get_md5_file as Md5
 from utils.fileutil import extract_filename_from_fullname
 from utils.oscommands import put_os_separator_in_path
 from entities.myfile import MyFile

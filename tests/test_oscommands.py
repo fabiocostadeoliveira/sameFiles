@@ -1,5 +1,5 @@
 import unittest, platform, os, tests.test_contants as const
-from utils.oscommands import getMd5 as Md5;
+from utils.oscommands import get_md5_file as Md5;
 from utils.oscommands import put_os_separator_in_path as Ps
 from utils.oscommands import get_files_by_directory as GetFiles
 

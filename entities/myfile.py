@@ -1,6 +1,10 @@
+from json import JSONEncoder
 from utils.fileutil import extract_filename_from_fullname, extract_path_from_fullname
+
+
 class MyFile:
-    def __init__(self, fullname, md5hash=None ,encode=None):
+
+    def __init__(self, fullname, md5hash=None, encode=None):
         self.fullname = fullname
         self.md5hash = md5hash
         self.encode = encode

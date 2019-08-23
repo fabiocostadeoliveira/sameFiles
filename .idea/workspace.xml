@@ -5,24 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a2f6af7-ccfa-4f12-853b-78ed9d846e0f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/entities/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/entities/clientconfig.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/properties/cfggeral.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/fileToTest.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_contants.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_oscommands.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/fileutil.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/oscommands.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/readproperties.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/searchfile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Teste2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Md5Files.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/database_config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/myfile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app2.py" beforeDir="false" afterPath="$PROJECT_DIR$/app2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/myfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/myfile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_oscommands.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_oscommands.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/oscommands.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/oscommands.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/readproperties.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/readproperties.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/searchfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/searchfile.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,22 +26,70 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/properties/cfggeral.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+            <state relative-caret-position="57">
+              <caret line="205" selection-start-line="205" selection-end-line="205" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app2.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/readproperties.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="44" column="92" lean-forward="true" selection-start-line="44" selection-start-column="92" selection-end-line="44" selection-end-column="92" />
+            <state relative-caret-position="75">
+              <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
               <folding>
-                <element signature="e#0#33#0" expanded="true" />
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/manage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-88">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/oscommands.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="12">
+              <caret line="79" column="4" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,9 +118,28 @@
       <find>filter_with_asterisk</find>
       <find>continue</find>
       <find>print</find>
+      <find>md5</find>
+      <find>cfg</find>
+      <find>cliente</find>
+      <find>agriter</find>
+      <find>propath</find>
+      <find>clientes</find>
+      <find>isfile</find>
+      <find>fontes</find>
+      <find>get_files_by_directory</find>
+      <find>get_md</find>
+      <find>.json</find>
+      <find>arquivo de confi</find>
+      <find>pri</find>
+      <find>source</find>
+      <find>dump</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
     <dirStrings>
       <dir>C:\Users\fabio.oliveira\PycharmProjects\Md5Files\properties</dir>
+      <dir>C:\Users\fabio.oliveira\PycharmProjects\Md5Files</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -94,15 +155,22 @@
         <option value="$PROJECT_DIR$/readproperties.py" />
         <option value="$PROJECT_DIR$/entities/clientconfig.py" />
         <option value="$PROJECT_DIR$/tests/test_oscommands.py" />
-        <option value="$PROJECT_DIR$/utils/readproperties.py" />
         <option value="$PROJECT_DIR$/utils/fileutil.py" />
-        <option value="$PROJECT_DIR$/entities/myfile.py" />
         <option value="$PROJECT_DIR$/utils/searchfile.py" />
         <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/properties/clientescfg.py" />
         <option value="$PROJECT_DIR$/tests/localTestContains.py" />
-        <option value="$PROJECT_DIR$/utils/oscommands.py" />
+        <option value="$PROJECT_DIR$/constants.py" />
         <option value="$PROJECT_DIR$/properties/cfggeral.py" />
+        <option value="$PROJECT_DIR$/config/settings_teste.json" />
+        <option value="$PROJECT_DIR$/config/database_config.json" />
+        <option value="$PROJECT_DIR$/entities/myfile.py" />
+        <option value="$PROJECT_DIR$/localTesteFabio.py" />
+        <option value="$PROJECT_DIR$/utils/oscommands.py" />
+        <option value="$PROJECT_DIR$/utils/readproperties.py" />
+        <option value="$PROJECT_DIR$/config/settings.py" />
+        <option value="$PROJECT_DIR$/settings.py" />
+        <option value="$PROJECT_DIR$/manage.py" />
         <option value="$PROJECT_DIR$/app2.py" />
       </list>
     </option>
@@ -119,7 +187,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -130,17 +197,23 @@
             <path>
               <item name="Md5Files" type="b2602c69:ProjectViewProjectNode" />
               <item name="Md5Files" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Md5Files" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Md5Files" type="462c0819:PsiDirectoryNode" />
               <item name="entities" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Md5Files" type="b2602c69:ProjectViewProjectNode" />
               <item name="Md5Files" type="462c0819:PsiDirectoryNode" />
-              <item name="properties" type="462c0819:PsiDirectoryNode" />
+              <item name="tmp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Md5Files" type="b2602c69:ProjectViewProjectNode" />
               <item name="Md5Files" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="tmp" type="462c0819:PsiDirectoryNode" />
+              <item name="41d0300227b71dec52891511262ce5fc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Md5Files" type="b2602c69:ProjectViewProjectNode" />
@@ -151,6 +224,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -160,6 +234,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fabio.oliveira\PycharmProjects\Md5Files" />
+      <recent name="C:\Users\fabio.oliveira\PycharmProjects\Md5Files\config" />
       <recent name="C:\Users\fabio.oliveira\PycharmProjects\Md5Files\utils" />
       <recent name="C:\Users\fabio.oliveira\PycharmProjects\Md5Files\entities" />
     </key>
@@ -177,27 +253,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.app2">
-    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Md5Files" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="app2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Md5Files" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -211,6 +266,69 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app2.py" />
+      <option name="PARAMETERS" value="--dbcliente agriter --dir C:/temp" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="localTesteFabio" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Md5Files" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/localTesteFabio.py" />
+      <option name="PARAMETERS" value="manage.py --tagmain 1.0.0" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Md5Files" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="--tagmain 1.0.0" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="settings (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Md5Files" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/settings.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -219,7 +337,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="localTestContains" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="settings" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Md5Files" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -227,53 +345,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/config" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/localTestContains.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="shutil" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Md5Files" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="C:/python37/Lib" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:/python37/Lib/shutil.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test_oscommands" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Md5Files" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/test_oscommands.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\fabio.oliveira\PycharmProjects\Md5Files\settings.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -284,18 +360,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.app2" />
-      <item itemvalue="Python.app" />
-      <item itemvalue="Python.localTestContains" />
-      <item itemvalue="Python.test_oscommands" />
-      <item itemvalue="Python.shutil" />
+      <item itemvalue="Python.localTesteFabio" />
+      <item itemvalue="Python.manage" />
+      <item itemvalue="Python.settings" />
+      <item itemvalue="Python.settings (1)" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.app2" />
-        <item itemvalue="Python.shutil" />
-        <item itemvalue="Python.app" />
-        <item itemvalue="Python.localTestContains" />
-        <item itemvalue="Python.test_oscommands" />
+        <item itemvalue="Python.manage" />
+        <item itemvalue="Python.settings (1)" />
+        <item itemvalue="Python.settings" />
+        <item itemvalue="Python.localTesteFabio" />
       </list>
     </recent_temporary>
   </component>
@@ -461,16 +537,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/readproperties.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_oscommands.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -478,47 +544,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/properties/BDComtulDesenv.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/properties/BDCooagrilDesenv.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/properties/BDComtulVM.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/properties/BDBomJesusECFDesenv.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/properties/BDCampDesenv.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/properties/BDAgroparDesenv.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/properties/BDBomJesusDesenv.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/properties/BDBiovelDesenv.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/properties/BDAmifecDesenv.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/properties/BDAgriterDesenv.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/properties/BDAgriterEDDC.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="8" selection-start-line="7" selection-end-line="7" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/properties/BDComtulDesenv.properties" />
+    <entry file="file://$PROJECT_DIR$/properties/BDCooagrilDesenv.properties" />
+    <entry file="file://$PROJECT_DIR$/properties/BDComtulVM.properties" />
+    <entry file="file://$PROJECT_DIR$/properties/BDBomJesusECFDesenv.properties" />
+    <entry file="file://$PROJECT_DIR$/properties/BDCampDesenv.properties" />
+    <entry file="file://$PROJECT_DIR$/properties/BDAgroparDesenv.properties" />
+    <entry file="file://$PROJECT_DIR$/properties/BDBomJesusDesenv.properties" />
+    <entry file="file://$PROJECT_DIR$/properties/BDBiovelDesenv.properties" />
+    <entry file="file://$PROJECT_DIR$/properties/BDAmifecDesenv.properties" />
+    <entry file="file://$PROJECT_DIR$/properties/BDAgriterDesenv.properties" />
+    <entry file="file://$PROJECT_DIR$/properties/BDAgriterEDDC.properties" />
     <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/1986093431/nt.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
@@ -546,13 +582,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/entities/clientconfig.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils/searchfile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -560,40 +589,6 @@
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/fileutil.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/oscommands.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="65" column="38" lean-forward="true" selection-start-line="65" selection-start-column="38" selection-end-line="65" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" column="24" selection-start-line="6" selection-end-line="6" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entities/myfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="26" column="58" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -606,24 +601,144 @@
     </entry>
     <entry file="file://C:/python37/Lib/shutil.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="117" column="40" selection-start-line="117" selection-start-column="40" selection-end-line="117" selection-end-column="40" />
+        <state relative-caret-position="128">
+          <caret line="260" selection-start-line="260" selection-end-line="260" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/41d0300227b71dec52891511262ce5fc/nfe002wr.trg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-162" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/41d0300227b71dec52891511262ce5fc/cadp708.p">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entities/clientconfig.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/settings_teste.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://C:/python37/Lib/traceback.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="336" selection-start-line="336" selection-end-line="336" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/fileutil.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entities/myfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/properties/cfggeral.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        <state relative-caret-position="234">
+          <caret line="13" column="5" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="13" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/localTesteFabio.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database_config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="170" column="42" selection-start-line="170" selection-start-column="17" selection-end-line="170" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/readproperties.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/oscommands.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12">
+          <caret line="79" column="4" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/python37/Lib/json/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1924">
+          <caret line="119" column="4" selection-start-line="119" selection-start-column="4" selection-end-line="119" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-88">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="44" column="92" lean-forward="true" selection-start-line="44" selection-start-column="92" selection-end-line="44" selection-end-column="92" />
+        <state relative-caret-position="57">
+          <caret line="205" selection-start-line="205" selection-end-line="205" />
           <folding>
-            <element signature="e#0#33#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
